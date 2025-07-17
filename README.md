@@ -19,6 +19,7 @@ To run and use this project, ensure that you have the following installed:
 ├── producer.go                 # Golang program to produce messages to Kafka
 ├── vector_output/              # Directory containing Vector output log files
 └── README.md                   # Project documentation
+```
 
 ## Services
 
