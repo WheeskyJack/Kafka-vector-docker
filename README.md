@@ -54,21 +54,25 @@ Clone this repository to your local machine:
 ```bash
 git clone <your-repo-url>
 cd <repository-folder>
+```
 
 ### Step 2: Start the Docker Services
 Use `docker-compose` to spin up Kafka, Zookeeper, and Vector:
 ```bash
 docker-compose up
+```
 
 ### Step 3: Run the Golang Kafka Producer
 Run the Golang producer program to send messages to Kafka:
 ```bash
 go run producer.go
+```
 
 ### Step 4: Check the Vector Output
 1. **File Output**: Open the generated log file in the `vector_output/` directory:
    ```bash
    cat vector_output/output.log
+   ```
 2. **Console output**: check vector container log to see the output.
 
 
