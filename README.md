@@ -16,7 +16,7 @@ To run and use this project, ensure that you have the following installed:
 .
 ├── docker-compose.yml          # Docker Compose file for services
 ├── vector_config.toml          # Configuration file for Vector
-├── producer.go                 # Golang program to produce messages to Kafka
+├── main.go                     # Golang program to produce messages to Kafka
 ├── vector_output/              # Directory containing Vector output log files
 └── README.md                   # Project documentation
 ```
@@ -30,12 +30,12 @@ Kafka is used as a message broker. The topic used in this project is `example-to
 Vector collects messages from Kafka (`example-topic`) and writes logs into a file as well as the console. The configuration for Vector is stored in `vector_config.toml`.
 
 ### 3. Golang Producer
-The Golang script (`producer.go`) acts as a producer to send messages to the `example-topic` on Kafka.
+The Golang script (`main.go`) acts as a producer to send messages to the `example-topic` on Kafka.
 
 ## How It Works
 
 1. **Kafka Producer**:
-   - The Golang `producer.go` file creates and sends messages to Kafka topic `example-topic` every second.
+   - The Golang `main.go` file creates and sends messages to Kafka topic `example-topic` every second.
    - The producer connects to Kafka exposed port `9092`.
 
 2. **Vector Consumer**:
@@ -65,7 +65,7 @@ docker-compose up
 ### Step 3: Run the Golang Kafka Producer
 Run the Golang producer program to send messages to Kafka:
 ```bash
-go run producer.go
+go run main.go
 ```
 
 ### Step 4: Check the Vector Output
