@@ -1,0 +1,16 @@
+[sources.kafka]
+type = "kafka"
+bootstrap_servers = "kafka:29092"
+group_id = "vector-consumer-group"
+topics = ["example-topic"]
+
+[sinks.file]
+type = "file"
+inputs = ["kafka"]
+path = "/var/lib/vector/output.log"
+encoding.codec = "text"
+
+[sinks.console_sink]
+type = "console"
+inputs = ["kafka"]
+encoding.codec = "text"                     # Specify encoding: "text" (raw logs) or "json"
